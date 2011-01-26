@@ -1,0 +1,12 @@
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "bundle/occur"]
+	path = bundle/occur
+	url = http://github.com/vim-scripts/occur.vim.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = http://github.com/javanthropus/vim-ruby.git
+[submodule "bundle/matchit"]
+	path = bundle/matchit
+	url = http://github.com/javanthropus/vim-matchit.git
