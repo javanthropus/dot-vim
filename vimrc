@@ -74,12 +74,12 @@ if has("autocmd")
   autocmd FileType xml,html runtime! scripts/closetag.vim
 
   " Set common pager mappings when reading manpages.
-  function! SetManMaps()
+  function! s:SetManMaps()
     map <buffer> <silent> q :q<CR>
     map <buffer> <silent> <SPACE> <PAGEDOWN>
     map <buffer> <silent> b <PAGEUP>
-  endfunction " SetManMaps
-  autocmd FileType man call SetManMaps()
+  endfunction " s:SetManMaps
+  autocmd FileType man call s:SetManMaps()
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
