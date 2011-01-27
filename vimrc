@@ -62,6 +62,14 @@ if has("autocmd")
   autocmd FileType perl setlocal ts=2 sw=2 tw=80
   autocmd FileType php setlocal ts=2 sw=2 tw=80
 
+  " Configure toggle comment maps.
+  autocmd FileType vim map <buffer> <silent> ,c :call CommentLineToEnd('"')<CR>
+  autocmd FileType text,python,ruby,perl,php,conf map <buffer> <silent> ,c :call CommentLineToEnd('#')<CR>
+  autocmd FileType xml,html map <buffer> <silent> ,c :call CommentLinePincer('<!-- ', ' -->')<CR>
+  autocmd FileType java,c++ map <buffer> <silent> ,C :call CommentLinePincer('/* ', ' */')<CR>
+  autocmd FileType java,c++ map <buffer> <silent> ,c :call CommentLineToEnd('//')<CR>
+  autocmd FileType c map <buffer> <silent> ,c :call CommentLinePincer('/* ', ' */')<CR>
+
   " Load the closetag script for XML-like files.
   autocmd FileType xml,html runtime! scripts/closetag.vim
 
