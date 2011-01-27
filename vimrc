@@ -15,14 +15,14 @@ call pathogen#helptags()
 set backspace=indent,eol,start
 
 "if has("vms")
-"  set nobackup		" do not keep a backup file, use versions instead
+"  set nobackup		 " Do not keep a backup file, use versions instead.
 "else
-"  set backup		" keep a backup file
+"  set backup		   " Keep a backup file.
 "endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50		" Keep 50 lines of command line history.
+set ruler		      " Show the cursor position all the time.
+set showcmd		    " Display incomplete commands.
+set incsearch		  " Do incremental searching.
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -34,9 +34,15 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+" The GUI background is light while the terminal background is dark.
+if has("gui_running")
+  set background=light
+else
+  set background=dark
+end
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
-
   " Enable file type detection.
   " Use the default filetype settings, so that mail gets 'tw' set to 72,
   " 'cindent' is on in C files, etc.
@@ -45,10 +51,27 @@ if has("autocmd")
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
-  au!
+  autocmd!
 
-  " For all text files set 'textwidth' to 78 characters.
+  " Set basic properties for various file types.
   autocmd FileType text setlocal textwidth=78
+  autocmd FileType vim setlocal ts=2 sw=2 et tw=80
+  autocmd FileType java,c,c++ setlocal ts=2 sw=2 et tw=80
+  autocmd FileType python setlocal ts=4 sw=4 tw=80
+  autocmd FileType ruby setlocal ts=2 sw=2 et tw=80
+  autocmd FileType perl setlocal ts=2 sw=2 tw=80
+  autocmd FileType php setlocal ts=2 sw=2 tw=80
+
+  " Load the closetag script for XML-like files.
+  autocmd FileType xml,html runtime! scripts/closetag.vim
+
+  " Set common pager mappings when reading manpages.
+  function! SetManMaps()
+    map <buffer> <silent> q :q<CR>
+    map <buffer> <silent> <SPACE> <PAGEDOWN>
+    map <buffer> <silent> b <PAGEUP>
+  endfunction " SetManMaps
+  autocmd FileType man call SetManMaps()
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -59,26 +82,20 @@ if has("autocmd")
     \ endif
 
   augroup END
-
 else
-
   set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
-"text handling configuration
+" Text handling configuration
 set fileencodings=utf-8
 set fileformats=unix,dos
 
+" Lines with trailing whitespace in Ruby files will be flagged.
 let ruby_space_errors = 1
-set whichwrap=b,s,<,>,[,]
-au FileType xml,html runtime! scripts/closetag.vim
-au FileType java,c,c++ setlocal ts=2 sw=2 et
-au FileType python setlocal ts=4 sw=4
-au FileType ruby setlocal ts=2 sw=2 et tw=80
-au FileType perl setlocal ts=2 sw=2
-au FileType php setlocal ts=2 sw=2
-au FileType man map <buffer> <silent> q :q<CR>
-au FileType man map <buffer> <silent> <SPACE> <PAGEDOWN>
-au FileType man map <buffer> <silent> b <PAGEUP>
+
+" The current will be reused to open new manpages.
 let g:manpageview_winopen="reuse"
+
+" Allow for line wrapping with arrows, space, and backspace in commands that use
+" them.
+set whichwrap=b,s,<,>,[,]
