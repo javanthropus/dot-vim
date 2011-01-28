@@ -70,9 +70,6 @@ if has("autocmd")
   autocmd FileType java,c++ map <buffer> <silent> ,c :call CommentLineToEnd('//')<CR>
   autocmd FileType c map <buffer> <silent> ,c :call CommentLinePincer('/* ', ' */')<CR>
 
-  " Load the closetag script for XML-like files.
-  autocmd FileType xml,html runtime! scripts/closetag.vim
-
   " Set common pager mappings when reading manpages.
   function! s:SetManMaps()
     map <buffer> <silent> q :q<CR>
