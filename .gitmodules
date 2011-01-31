@@ -13,3 +13,6 @@
 [submodule "bundle/toggle-comment"]
 	path = bundle/toggle-comment
 	url = http://github.com/vim-scripts/ToggleComment.git
+[submodule "bundle/delimitMate.vim"]
+	path = bundle/delimitMate.vim
+	url = http://github.com/javanthropus/delimitMate.vim.git
