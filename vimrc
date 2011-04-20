@@ -98,7 +98,7 @@ set fileformats=unix,dos
 " Lines with trailing whitespace in Ruby files will be flagged.
 let ruby_space_errors = 1
 " Enable Ruby line folding logic.
-let ruby_fold = 1
+"let ruby_fold = 1
 " But don't fold comments.
 let ruby_no_comment_fold = 1
 " Use more context for highlighting Ruby constructs properly.
@@ -116,6 +116,8 @@ set whichwrap=b,s,<,>,[,]
 " MAPPINGS...
 "
 
+" Use C-f to automatically generate syntax-based folds.
+nmap <silent> <C-f> :let saved_fm=&foldmethod<CR>:set foldmethod=syntax<CR>:let &foldmethod=saved_fm<CR>:unlet saved_fm<CR>
 
 " Use C-n to toggle NERDTree.
 nmap <silent> <C-n> :NERDTreeToggle<CR>
