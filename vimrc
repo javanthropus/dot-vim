@@ -110,3 +110,12 @@ let g:manpageview_winopen="reuse"
 " Allow for line wrapping with arrows, space, and backspace in commands that use
 " them.
 set whichwrap=b,s,<,>,[,]
+
+
+"
+" MAPPINGS...
+"
+
+
+" Use C-n to toggle NERDTree.
+nmap <silent> <C-n> :NERDTreeToggle<CR>
