@@ -116,8 +116,8 @@ set whichwrap=b,s,<,>,[,]
 " MAPPINGS...
 "
 
-" Use C-f to automatically generate syntax-based folds.
-nmap <silent> <C-f> :let saved_fm=&foldmethod<CR>:set foldmethod=syntax<CR>:let &foldmethod=saved_fm<CR>:unlet saved_fm<CR>
+" Use Leader-f to automatically generate syntax-based folds.
+nmap <silent> <Leader>f :let saved_fm=&foldmethod<CR>:set foldmethod=syntax<CR>:let &foldmethod=saved_fm<CR>:unlet saved_fm<CR>
 
-" Use C-n to toggle NERDTree.
-nmap <silent> <C-n> :NERDTreeToggle<CR>
+" Use Leader-n to toggle NERDTree.
+nmap <silent> <Leader>n :NERDTreeToggle<CR>
