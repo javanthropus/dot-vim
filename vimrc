@@ -103,7 +103,7 @@ set fileformats=unix,dos
 " Enable syntax-based folding by default.
 set foldmethod=syntax
 
-" The current will be reused to open new manpages.
+" The current window will be reused to open new manpages.
 let g:manpageview_winopen="reuse"
 
 " Allow for line wrapping with arrows, space, and backspace in commands that use
