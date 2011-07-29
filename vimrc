@@ -59,13 +59,14 @@ if has("autocmd")
     \ syn match WhitespaceWarning /\s\+$/
 
   " Set basic properties for various file types.
-  autocmd FileType text setlocal textwidth=78
-  autocmd FileType vim setlocal ts=2 sw=2 et tw=80
-  autocmd FileType java,c,c++ setlocal ts=2 sw=2 et tw=80
-  autocmd FileType python setlocal ts=4 sw=4 tw=80
-  autocmd FileType ruby setlocal ts=2 sw=2 et tw=80
-  autocmd FileType perl setlocal ts=2 sw=2 tw=80
-  autocmd FileType php setlocal ts=2 sw=2 tw=80
+  autocmd FileType text
+    \ setlocal tw=78
+  autocmd FileType vim,java,javascript,c,c++,ruby
+    \ setlocal ts=2 sw=2 et tw=80
+  autocmd FileType perl,php,xml,html
+    \ setlocal ts=2 sw=2 tw=80
+  autocmd FileType python
+    \ setlocal ts=4 sw=4 tw=80
 
   " Configure toggle comment maps.
   autocmd FileType vim
@@ -85,12 +86,10 @@ if has("autocmd")
     \ map <buffer> <silent> <Leader>cp :call CommentLinePincer('<!-- ', ' -->')<CR>
 
   " Set common pager mappings when reading manpages.
-  function! s:SetManMaps()
-    map <buffer> <silent> q :q<CR>
-    map <buffer> <silent> <SPACE> <PAGEDOWN>
-    map <buffer> <silent> b <PAGEUP>
-  endfunction " s:SetManMaps
-  autocmd FileType man call s:SetManMaps()
+  autocmd FileType man
+    \ map <buffer> <silent> q :q<CR>|
+    \ map <buffer> <silent> <SPACE> <PAGEDOWN>|
+    \ map <buffer> <silent> b <PAGEUP>
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
