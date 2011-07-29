@@ -53,6 +53,11 @@ if has("autocmd")
   augroup vimrcEx
   autocmd!
 
+  " Highlight dangling whitespace.
+  autocmd Syntax *
+    \ highlight def link WhitespaceWarning Error|
+    \ syn match WhitespaceWarning /\s\+$/
+
   " Set basic properties for various file types.
   autocmd FileType text setlocal textwidth=78
   autocmd FileType vim setlocal ts=2 sw=2 et tw=80
