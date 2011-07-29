@@ -95,14 +95,6 @@ endif " has("autocmd")
 set fileencodings=utf-8
 set fileformats=unix,dos
 
-" Lines with trailing whitespace in Ruby files will be flagged.
-let ruby_space_errors = 1
-" Enable Ruby line folding logic.
-"let ruby_fold = 1
-" But don't fold comments.
-let ruby_no_comment_fold = 1
-" Use more context for highlighting Ruby constructs properly.
-"let ruby_minlines = 500
 
 " The current will be reused to open new manpages.
 let g:manpageview_winopen="reuse"
