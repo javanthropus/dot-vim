@@ -100,6 +100,8 @@ endif " has("autocmd")
 set fileencodings=utf-8
 set fileformats=unix,dos
 
+" Enable syntax-based folding by default.
+set foldmethod=syntax
 
 " The current will be reused to open new manpages.
 let g:manpageview_winopen="reuse"
@@ -112,9 +114,6 @@ set whichwrap=b,s,<,>,[,]
 "
 " MAPPINGS...
 "
-
-" Use Leader-f to automatically generate syntax-based folds.
-nmap <silent> <Leader>f :let saved_fm=&foldmethod<CR>:set foldmethod=syntax<CR>:let &foldmethod=saved_fm<CR>:unlet saved_fm<CR>
 
 " Use Leader-n to toggle NERDTree.
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
