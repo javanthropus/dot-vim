@@ -68,12 +68,21 @@ if has("autocmd")
   autocmd FileType php setlocal ts=2 sw=2 tw=80
 
   " Configure toggle comment maps.
-  autocmd FileType vim map <buffer> <silent> ,c :call CommentLineToEnd('"')<CR>
-  autocmd FileType text,python,ruby,perl,php,conf map <buffer> <silent> ,c :call CommentLineToEnd('#')<CR>
-  autocmd FileType xml,html map <buffer> <silent> ,c :call CommentLinePincer('<!-- ', ' -->')<CR>
-  autocmd FileType java,c++ map <buffer> <silent> ,C :call CommentLinePincer('/* ', ' */')<CR>
-  autocmd FileType java,c++ map <buffer> <silent> ,c :call CommentLineToEnd('//')<CR>
-  autocmd FileType c map <buffer> <silent> ,c :call CommentLinePincer('/* ', ' */')<CR>
+  autocmd FileType vim
+    \ map <buffer> <silent> <Leader>cc :call CommentLineToEnd('"')<CR>|
+    \ map <buffer> <silent> <Leader>cp :call CommentLineToEnd('"')<CR>
+  autocmd FileType text,python,ruby,perl,php,conf
+    \ map <buffer> <silent> <Leader>cc :call CommentLineToEnd('#')<CR>|
+    \ map <buffer> <silent> <Leader>cp :call CommentLineToEnd('#')<CR>
+  autocmd FileType java,javascript,c++
+    \ map <buffer> <silent> <Leader>cc :call CommentLineToEnd('//')<CR>|
+    \ map <buffer> <silent> <Leader>cp :call CommentLinePincer('/* ', ' */')<CR>
+  autocmd FileType c
+    \ map <buffer> <silent> <Leader>cc :call CommentLinePincer('/* ', ' */')<CR>|
+    \ map <buffer> <silent> <Leader>cp :call CommentLinePincer('/* ', ' */')<CR>
+  autocmd FileType xml,html
+    \ map <buffer> <silent> <Leader>cc :call CommentLinePincer('<!-- ', ' -->')<CR>|
+    \ map <buffer> <silent> <Leader>cp :call CommentLinePincer('<!-- ', ' -->')<CR>
 
   " Set common pager mappings when reading manpages.
   function! s:SetManMaps()
