@@ -14,6 +14,3 @@ else
   " are displayed.
   let &columns = 80 + &numberwidth
 endif
-
-" Maximize the GUI vertically.
-set lines=999
