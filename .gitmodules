@@ -22,3 +22,6 @@
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = http://github.com/vim-scripts/bufexplorer.zip.git
+[submodule "bundle/textile.vim"]
+	path = bundle/textile.vim
+	url = http://github.com/timcharper/textile.vim.git
