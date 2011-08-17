@@ -72,7 +72,7 @@ if has("autocmd")
   autocmd FileType vim
     \ map <buffer> <silent> <Leader>cc :call CommentLineToEnd('"')<CR>|
     \ map <buffer> <silent> <Leader>cp :call CommentLineToEnd('"')<CR>
-  autocmd FileType text,python,ruby,perl,php,conf
+  autocmd FileType text,python,ruby,perl,php,conf,sh
     \ map <buffer> <silent> <Leader>cc :call CommentLineToEnd('#')<CR>|
     \ map <buffer> <silent> <Leader>cp :call CommentLineToEnd('#')<CR>
   autocmd FileType java,javascript,c++
