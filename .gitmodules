@@ -34,3 +34,7 @@
 	path = bundle/textile.vim
 	url = http://github.com/timcharper/textile.vim.git
 	ignore = dirty
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
+	ignore = dirty
