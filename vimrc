@@ -123,5 +123,10 @@ set whichwrap=b,s,<,>,[,]
 " MAPPINGS...
 "
 
+" Disable F1.
+map <F1> <Nop>
+map! <F1> <Nop>
+
+
 " Use Leader-n to toggle NERDTree.
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
