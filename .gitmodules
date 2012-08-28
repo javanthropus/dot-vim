@@ -41,3 +41,6 @@
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/vim-puppet"]
+	path = bundle/vim-puppet
+	url = git://github.com/rodjek/vim-puppet.git
