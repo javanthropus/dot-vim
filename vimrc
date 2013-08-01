@@ -8,8 +8,7 @@ endif
 set nocompatible
 
 " Set up the pathogen plugin.
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
@@ -61,7 +60,7 @@ if has("autocmd")
   " Set basic properties for various file types.
   autocmd FileType text
     \ setlocal tw=78
-  autocmd FileType vim,java,javascript,c,c++,ruby
+  autocmd FileType vim,java,javascript,c,c++,ruby,puppet
     \ setlocal ts=2 sw=2 et tw=80
   autocmd FileType perl,php,xml,html
     \ setlocal ts=2 sw=2 tw=80
@@ -72,7 +71,7 @@ if has("autocmd")
   autocmd FileType vim
     \ map <buffer> <silent> <Leader>cc :call CommentLineToEnd('"')<CR>|
     \ map <buffer> <silent> <Leader>cp :call CommentLineToEnd('"')<CR>
-  autocmd FileType text,python,ruby,perl,php,conf,sh
+  autocmd FileType text,python,ruby,perl,php,conf,sh,puppet
     \ map <buffer> <silent> <Leader>cc :call CommentLineToEnd('#')<CR>|
     \ map <buffer> <silent> <Leader>cp :call CommentLineToEnd('#')<CR>
   autocmd FileType java,javascript,c++
