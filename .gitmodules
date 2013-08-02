@@ -43,7 +43,7 @@
 	url = https://github.com/tpope/vim-rails.git
 [submodule "bundle/vim-puppet"]
 	path = bundle/vim-puppet
-	url = git://github.com/rodjek/vim-puppet.git
+	url = https://github.com/rodjek/vim-puppet.git
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/MarcWeber/ultisnips.git
