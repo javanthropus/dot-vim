@@ -62,10 +62,12 @@ if has("autocmd")
     \ setlocal tw=78
   autocmd FileType vim,java,javascript,c,c++,ruby,puppet
     \ setlocal ts=2 sw=2 et tw=80
-  autocmd FileType perl,php,xml,html
+  autocmd FileType perl,php
     \ setlocal ts=2 sw=2 tw=80
   autocmd FileType python
     \ setlocal ts=4 sw=4 tw=80
+  autocmd FileType xml,html
+    \ setlocal ts=2 sw=2 et tw=0
 
   " Configure toggle comment maps.
   autocmd FileType vim
